@@ -1,4 +1,4 @@
-public class Aliado extends Carta implements Jugable {
+public class Aliado extends Carta implements Jugable, Atacante, AportaDefensa {
 
     private int ataque;
     private int defensa;

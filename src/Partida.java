@@ -137,6 +137,47 @@ public class Partida {
         }
     }
 
+    public void jugarAliadoDesdeMano(int indice) {
+        if (indice < 0 || indice >= this.mano.size()) {
+            System.out.println("Indice invalido.");
+            return;
+        }
+        Carta carta = this.mano.get(indice);
+        if (!(carta instanceof Aliado)) {
+            System.out.println("Esa carta no es un Aliado.");
+            return;
+        }
+        bajarAliado((Aliado) carta);
+    }
+
+    public void jugarTotemDesdeMano(int indice) {
+        if (indice < 0 || indice >= this.mano.size()) {
+            System.out.println("Indice invalido.");
+            return;
+        }
+        Carta carta = this.mano.get(indice);
+        if (!(carta instanceof Totem)) {
+            System.out.println("Esa carta no es un Totem.");
+            return;
+        }
+        activarTotem((Totem) carta);
+    }
+
+    public void mostrarArmasEnMano() {
+        boolean hayArmas = false;
+        int contador = 0;
+        for (Carta c : this.mano) {
+            if (c instanceof Arma) {
+                System.out.println("[" + contador + "] " + c.getNombre() + " (Arma) - Bonus ataque: +" + ((Arma) c).getBonusAtaque());
+                hayArmas = true;
+            }
+            contador++;
+        }
+        if (!hayArmas) {
+            System.out.println("No hay armas en la mano.");
+        }
+    }
+
     public void mostrarEstadoGeneral() {
         System.out.println("=== ESTADO DE LA PARTIDA ===");
         System.out.println("Reserva de oro: " + this.reservaDeOro);
