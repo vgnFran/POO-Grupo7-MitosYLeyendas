@@ -8,7 +8,7 @@ public class Arma extends Carta implements Equipable {
     }
 
     public int getBonusAtaque() {
-        return bonusAtaque;
+        return this.bonusAtaque;
     }
 
     @Override
@@ -19,6 +19,6 @@ public class Arma extends Carta implements Equipable {
     @Override
     public void mostrarCarta() {
         super.mostrarCarta();
-        System.out.println("Bonus de ataque: +" + bonusAtaque);
+        System.out.println("Bonus de ataque: +" + this.bonusAtaque);
     }
 }

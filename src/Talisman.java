@@ -9,9 +9,7 @@ public class Talisman extends Carta implements Jugable {
 
     @Override
     public void jugar(Partida partida) {
-
-        partida.aumentarDefensaCastillo(recuperacionDefensa);
-
-        System.out.println(getNombre() + " fue utilizado.");
+        partida.aumentarDefensaCastillo(this.recuperacionDefensa);
+        System.out.println(this.getNombre() + " fue utilizado.");
     }
 }

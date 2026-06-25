@@ -12,39 +12,39 @@ public class Aliado extends Carta implements Jugable {
     }
 
     public int getAtaque() {
-        if (armaEquipada != null) {
-            return ataque + armaEquipada.getBonusAtaque();
+        if (this.armaEquipada != null) {
+            return this.ataque + this.armaEquipada.getBonusAtaque();
         }
-        return ataque;
+        return this.ataque;
     }
 
     public int getDefensa() {
-        return defensa;
+        return this.defensa;
     }
 
     public boolean tieneArma() {
-        return armaEquipada != null;
+        return this.armaEquipada != null;
     }
 
     public void equiparArma(Arma arma) {
-        if (armaEquipada != null) {
-            System.out.println(getNombre() + " ya tiene un arma equipada.");
+        if (this.armaEquipada != null) {
+            System.out.println(this.getNombre() + " ya tiene un arma equipada.");
             return;
         }
-        armaEquipada = arma;
-        System.out.println(arma.getNombre() + " equipada en " + getNombre() + ".");
+        this.armaEquipada = arma;
+        System.out.println(arma.getNombre() + " equipada en " + this.getNombre() + ".");
     }
 
     @Override
     public void jugar(Partida partida) {
-        partida.bajarAliado();
+        partida.bajarAliado(this);
     }
 
     public void mostrarAliado() {
         System.out.println("-----------------------");
-        System.out.println("Aliado: " + getNombre());
-        System.out.println("Ataque: " + getAtaque());
-        System.out.println("Defensa: " + defensa);
-        System.out.println("Arma: " + (armaEquipada != null ? armaEquipada.getNombre() : "ninguna"));
+        System.out.println("Aliado: " + this.getNombre());
+        System.out.println("Ataque: " + this.getAtaque());
+        System.out.println("Defensa: " + this.defensa);
+        System.out.println("Arma: " + (this.armaEquipada != null ? this.armaEquipada.getNombre() : "ninguna"));
     }
 }

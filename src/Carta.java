@@ -11,21 +11,21 @@ public abstract class Carta {
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public int getCostoOro() {
-        return costoOro;
+        return this.costoOro;
     }
 
     public String getDescripcion() {
-        return descripcion;
+        return this.descripcion;
     }
 
     public void mostrarCarta() {
         System.out.println("-----------------------");
-        System.out.println("Carta: " + nombre);
-        System.out.println("Costo: " + costoOro);
-        System.out.println(descripcion);
+        System.out.println("Carta: " + this.nombre);
+        System.out.println("Costo: " + this.costoOro);
+        System.out.println(this.descripcion);
     }
 }
