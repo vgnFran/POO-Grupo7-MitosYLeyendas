@@ -46,7 +46,7 @@ public class Main {
                     partida.mostrarEstadoGeneral();
                     break;
                 case 9:
-                    System.out.println("Saliendo del juego. Hasta la proxima!");
+                    System.out.println("Saliendo del juego");
                     break;
                 default:
                     System.out.println("Opcion incorrecta. Intente nuevamente.");
@@ -99,10 +99,12 @@ public class Main {
     }
 
     static void levantarCarta(MazoCastillo mazo, Partida partida) {
+
         if (mazo.estaVacio()) {
             System.out.println("El mazo esta vacio, no hay mas cartas para levantar.");
             return;
         }
+
         Carta carta = mazo.levantarCarta();
         partida.agregarCartaAMano(carta);
         System.out.println("--- Carta levantada ---");
@@ -110,29 +112,37 @@ public class Main {
     }
 
     static void jugarOro(Partida partida, Scanner scanner) {
+
         System.out.println("=== CARTAS EN MANO ===");
         partida.mostrarMano();
+
         System.out.print("Ingrese el indice de la carta de oro a jugar: ");
         int indice = scanner.nextInt();
         partida.jugarCartaOro(indice);
+
     }
 
     static void bajarAliado(Partida partida, Scanner scanner) {
+
         System.out.println("=== CARTAS EN MANO ===");
         partida.mostrarMano();
+
         System.out.print("Ingrese el indice del aliado a bajar: ");
         int indice = scanner.nextInt();
         partida.jugarAliadoDesdeMano(indice);
     }
 
     static void equiparArma(Partida partida, Scanner scanner) {
+
         System.out.println("=== ALIADOS EN LINEA DE DEFENSA ===");
         partida.mostrarLineaDeDefensa();
+
         System.out.print("Ingrese el indice del aliado al que equipar el arma: ");
         int indiceAliado = scanner.nextInt();
 
         System.out.println("=== ARMAS EN MANO ===");
         partida.mostrarArmasEnMano();
+
         System.out.print("Ingrese el indice del arma (indice de la mano): ");
         int indiceArma = scanner.nextInt();
 
@@ -140,8 +150,10 @@ public class Main {
     }
 
     static void activarTotem(Partida partida, Scanner scanner) {
+
         System.out.println("=== CARTAS EN MANO ===");
         partida.mostrarMano();
+
         System.out.print("Ingrese el indice del totem a activar: ");
         int indice = scanner.nextInt();
         partida.jugarTotemDesdeMano(indice);
